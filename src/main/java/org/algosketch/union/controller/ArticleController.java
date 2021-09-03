@@ -11,6 +11,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Controller
+@RequestMapping("/api")
 public class ArticleController {
     private final ArticleService articleService;
 
