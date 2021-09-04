@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/api")
@@ -31,6 +30,7 @@ public class ArticleController {
     }
 
     @PostMapping("articles")
+    @ResponseBody
     public String postArticle(ArticleForm form) {
         Article article = new Article();
         article.setUser("익명");
@@ -41,7 +41,7 @@ public class ArticleController {
 
         System.out.println(newA.getContent());
 
-        return "redirect:/";
+        return "";
     }
 
     @GetMapping("articles")
